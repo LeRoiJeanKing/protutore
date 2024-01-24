@@ -14,8 +14,7 @@ class MyApp extends App {
     return (
       <div style={{ display: 'flex' }}>
         {/* Affichage du menu latéral sur toutes les pages */}
-        <Sidebar />
-
+      
         {/* Affichage du composant de la page actuelle */}
         <Component {...pageProps} />
       </div>
