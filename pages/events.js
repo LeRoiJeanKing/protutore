@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import EventCard from '../components/EventCard';
 import EventDetail from '../components/EventDetail';
 import Sidebar from '../components/Sidebar';
+import LoginModal from '../components/LoginModal'; // Ajout de l'import
 
 const EventsPage = () => {
   const eventsData = [
@@ -28,9 +29,18 @@ const EventsPage = () => {
   ];
 
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false); // Nouveau state pour la fenêtre modale
 
   const handleEventClick = (event) => {
     setSelectedEvent(event);
+  };
+
+  const openLoginModal = () => {
+    setIsLoginModalOpen(true);
+  };
+
+  const closeLoginModal = () => {
+    setIsLoginModalOpen(false);
   };
 
   return (
@@ -52,10 +62,24 @@ const EventsPage = () => {
             {selectedEvent && <EventDetail event={selectedEvent} />}
           </div>
         </div>
+
+        {/* Bouton pour ouvrir la fenêtre modale de login */}
+        <button
+          style={{
+            marginTop: '20px',
+            padding: '8px 16px',
+            cursor: 'pointer',
+          }}
+          onClick={openLoginModal}
+        >
+          Login
+        </button>
+
+        {/* Fenêtre modale de login */}
+        <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />
       </div>
     </div>
   );
 };
 
 export default EventsPage;
-
