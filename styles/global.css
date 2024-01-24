@@ -1,18 +1,31 @@
 /* styles/global.css */
+
+/* Importe la police */
+@font-face {
+  font-family: 'MaPolice';
+  src: url('/fonts/Mulish0.ttf') format('ttf'),
+       url('/fonts/Mulish.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Applique la nouvelle police au corps du document */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  button {
-    padding: 8px 16px;
-    border: 1px solid #333;
-    background-color: #fff;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #ddd;
-  }
-  
+  font-family: 'MaPolice', sans-serif;
+  background-color: #f4f4f4b9;
+  color: #333;
+}
+
+/* Styles pour les boutons */
+button {
+  padding: 8px 16px;
+  border: 1px solid #333;
+  background-color: #f4f4f4b9;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+/* Autres styles... */
