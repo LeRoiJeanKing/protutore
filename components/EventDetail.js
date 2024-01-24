@@ -3,6 +3,11 @@ import React from 'react';
 
 // Composant de détails de l'événement réutilisable
 const EventDetail = ({ event }) => {
+  // Vérifier si l'événement existe et si la propriété 'name' est définie
+  if (!event || !event.name) {
+    return <div>Événement non trouvé</div>;
+  }
+
   return (
     <div>
       <h1>Détails de l'événement</h1>

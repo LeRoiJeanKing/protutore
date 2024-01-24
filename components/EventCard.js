@@ -11,10 +11,8 @@ const EventCard = ({ event }) => {
       <p>Heure: {event.time}</p>
       <p>{event.description}</p>
       {/* Lien vers la page de détails de l'événement */}
-      <Link href={`/event/${event.id}`} passHref>
-        <div>
-          <a>Détails</a>
-        </div>
+      <Link href={`/event/${event.id}`}>
+        <a>Détails</a>
       </Link>
     </div>
   );
