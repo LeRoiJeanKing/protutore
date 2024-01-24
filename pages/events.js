@@ -22,7 +22,7 @@ const EventsPage = () => {
       date: '2024-02-15',
       time: '18:00',
       description: 'Un tournoi de football entre différentes universités.',
-      speakers: ['Patrick Sébastien'],
+      speakers: ['Équipe de Football'],
       location: 'Stade Universitaire',
     },
     // Ajoute d'autres événements
@@ -43,7 +43,9 @@ const EventsPage = () => {
         {/* Affichage de la liste d'événements */}
         <div style={{ marginRight: '20px' }}>
           {eventsData.map((event) => (
-            <EventCard key={event.id} event={event} onClick={() => handleEventClick(event)} />
+            <div key={event.id} onClick={() => handleEventClick(event)} style={{ cursor: 'pointer', marginBottom: '10px' }}>
+              {event.name}
+            </div>
           ))}
         </div>
         {/* Affichage des détails de l'événement sélectionné */}
