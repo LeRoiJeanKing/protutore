@@ -12,10 +12,13 @@ const EventCard = ({ event }) => {
       <p>{event.description}</p>
       {/* Lien vers la page de détails de l'événement */}
       <Link href={`/event/${event.id}`} passHref>
-        <a>Détails</a>
+        <div>
+          <a>Détails</a>
+        </div>
       </Link>
     </div>
   );
 };
 
 export default EventCard;
+
