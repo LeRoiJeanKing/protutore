@@ -3,8 +3,8 @@ import React from 'react';
 import App from 'next/app';
 import Sidebar from '../components/Sidebar';
 
-// Importe le fichier de styles spécifiques à la page events
-import '../pages/events/styles.module.css';
+// Importe le fichier de styles globaux
+import '../styles/global.css';
 
 // Surcharge du composant App de Next.js
 class MyApp extends App {
