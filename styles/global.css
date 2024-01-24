@@ -3,8 +3,8 @@
 /* Importe la police */
 @font-face {
   font-family: 'MaPolice';
-  src: url('/public/fonts/Mulish0.ttf') format('ttf'),
-       url('/public/fonts/Mulish.ttf') format('ttf');
+  src: url('/public/fonts/Mulish0.ttf') format('truetype'),
+       url('/public/fonts/Mulish.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
