@@ -1,23 +1,17 @@
-// Import des modules nécessaires
+// pages/index.js
 import React from 'react';
-import { eventsData } from '../data';
-import EventCard from '../components/EventCard';
+import Sidebar from '../components/Sidebar';
 
-// Page d'accueil
 const HomePage = () => {
-  // Utilisation des données simulées
-  const upcomingEvents = eventsData;
-
   return (
-    <div>
-      <h1>Événements à venir</h1>
-      {upcomingEvents.map((event) => (
-        // Utiliser le composant EventCard pour chaque événement
-        <EventCard key={event.id} event={event} />
-      ))}
+    <div style={{ display: 'flex' }}>
+      <Sidebar />
+      <div style={{ padding: '20px', flexGrow: 1 }}>
+        <h1 style={{ marginBottom: '20px' }}>Page d'Accueil</h1>
+        {/* Contenu de la page d'accueil */}
+      </div>
     </div>
   );
 };
 
 export default HomePage;
-

@@ -1,11 +1,10 @@
-// Import des modules nécessaires
+// pages/events.js
 import React, { useState } from 'react';
 import EventCard from '../components/EventCard';
 import EventDetail from '../components/EventDetail';
+import Sidebar from '../components/Sidebar';
 
-// Page Events
 const EventsPage = () => {
-  // Exemple de liste d'événements
   const eventsData = [
     {
       id: 1,
@@ -28,29 +27,30 @@ const EventsPage = () => {
     // Ajoute d'autres événements
   ];
 
-  // État pour suivre l'événement sélectionné pour afficher les détails
   const [selectedEvent, setSelectedEvent] = useState(null);
 
-  // Gestionnaire de clic pour afficher les détails d'un événement
   const handleEventClick = (event) => {
     setSelectedEvent(event);
   };
 
   return (
-    <div>
-      <h1>Liste des Événements</h1>
-      <div style={{ display: 'flex' }}>
-        {/* Affichage de la liste d'événements */}
-        <div style={{ marginRight: '20px' }}>
-          {eventsData.map((event) => (
-            <div key={event.id} onClick={() => handleEventClick(event)} style={{ cursor: 'pointer', marginBottom: '10px' }}>
-              {event.name}
-            </div>
-          ))}
-        </div>
-        {/* Affichage des détails de l'événement sélectionné */}
-        <div>
-          {selectedEvent && <EventDetail event={selectedEvent} />}
+    <div style={{ display: 'flex' }}>
+      <Sidebar />
+      <div style={{ padding: '20px', flexGrow: 1 }}>
+        <h1 style={{ marginBottom: '20px' }}>Liste des Événements</h1>
+        <div style={{ display: 'flex' }}>
+          <div style={{ marginRight: '20px', flexBasis: '300px' }}>
+            {eventsData.map((event) => (
+              <EventCard
+                key={event.id}
+                event={event}
+                onClick={() => handleEventClick(event)}
+              />
+            ))}
+          </div>
+          <div style={{ flexGrow: 1 }}>
+            {selectedEvent && <EventDetail event={selectedEvent} />}
+          </div>
         </div>
       </div>
     </div>
@@ -58,3 +58,4 @@ const EventsPage = () => {
 };
 
 export default EventsPage;
+
