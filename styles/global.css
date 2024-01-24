@@ -3,8 +3,8 @@
 /* Importe la police */
 @font-face {
   font-family: 'MaPolice';
-  src: url('/fonts/Mulish0.ttf') format('ttf'),
-       url('/fonts/Mulish.ttf') format('ttf');
+  src: url('/public/fonts/Mulish0.ttf') format('ttf'),
+       url('/public/fonts/Mulish.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,7 +25,7 @@ button {
 }
 
 button:hover {
-  background-color: #ddd;
+  background-color: #f4f4f4b9;
 }
 
 /* Autres styles... */
