@@ -2,6 +2,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { eventsData } from '../../data';
+import EventDetail from '../../components/EventDetail';
 
 // Page de détails de l'événement
 const EventDetailPage = () => {
@@ -12,18 +13,7 @@ const EventDetailPage = () => {
   // Utilisation des données simulées
   const eventDetails = eventsData.find((event) => event.id === eventId);
 
-  return (
-    <div>
-      <h1>Détails de l'événement</h1>
-      <h2>{eventDetails.name}</h2>
-      <p>Date: {eventDetails.date}</p>
-      <p>Heure: {eventDetails.time}</p>
-      <p>Description: {eventDetails.description}</p>
-      <p>Intervenants: {eventDetails.speakers}</p>
-      <p>Emplacement: {eventDetails.location}</p>
-      {/* Afficher d'autres informations et médias associés */}
-    </div>
-  );
+  return <EventDetail event={eventDetails} />;
 };
 
 export default EventDetailPage;
