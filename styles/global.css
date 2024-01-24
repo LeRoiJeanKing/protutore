@@ -20,12 +20,12 @@ body {
 button {
   padding: 8px 16px;
   border: 1px solid #333;
-  background-color: #f4f4f4b9;
+  background-color: #5f5d5db2;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #f4f4f4b9;
+  background-color: #857e7ef8;
 }
 
 /* Autres styles... */
