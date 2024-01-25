@@ -1,7 +1,7 @@
 // pages/connexion.js
 import React, { useState } from 'react';
 import LoginModal from '../components/LoginModal';
-import Sidebar from '../components/Sidebar';
+import RegistrationModal from '../components/RegistrationModal'; // Ajout de l'import
 
 const ConnexionPage = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -56,12 +56,7 @@ const ConnexionPage = () => {
       <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />
 
       {/* Fenêtre modale d'inscription */}
-      <LoginModal isOpen={isRegistrationModalOpen} onClose={closeRegistrationModal}>
-        {/* Contenu de la fenêtre modale d'inscription */}
-        <h2>Inscription</h2>
-        {/* Ajoute les champs pour le pseudo, le mot de passe, etc. ici */}
-        <button onClick={closeRegistrationModal}>Fermer</button>
-      </LoginModal>
+      <RegistrationModal isOpen={isRegistrationModalOpen} onClose={closeRegistrationModal} />
     </div>
   );
 };
