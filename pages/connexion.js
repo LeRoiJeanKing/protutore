@@ -22,9 +22,31 @@ const ConnexionPage = () => {
   ];
 
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [loginData, setLoginData] = useState({ username: '', password: '' });
+  const [registrationData, setRegistrationData] = useState({ username: '', password: '' });
 
   const handleEventClick = (event) => {
     setSelectedEvent(event);
+  };
+
+  const handleLoginChange = (e) => {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+  };
+
+  const handleRegistrationChange = (e) => {
+    setRegistrationData({ ...registrationData, [e.target.name]: e.target.value });
+  };
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    // Ajoute la logique de connexion ici
+    console.log('Login Data:', loginData);
+  };
+
+  const handleRegistrationSubmit = (e) => {
+    e.preventDefault();
+    // Ajoute la logique d'inscription ici
+    console.log('Registration Data:', registrationData);
   };
 
   return (
@@ -57,17 +79,34 @@ const ConnexionPage = () => {
                 <p>Date: {selectedEvent.date}</p>
                 <p>Heure: {selectedEvent.time}</p>
                 <p>Description: {selectedEvent.description}</p>
-                {/* Ajoute le formulaire de connexion ou d'inscription ici en fonction de l'événement sélectionné */}
                 {selectedEvent.name === 'Connexion' && (
-                  <form>
-                    {/* Formulaire de connexion */}
-                    {/* ... */}
+                  <form onSubmit={handleLoginSubmit}>
+                    <label>
+                      Nom d'utilisateur:
+                      <input type="text" name="username" value={loginData.username} onChange={handleLoginChange} />
+                    </label>
+                    <br />
+                    <label>
+                      Mot de passe:
+                      <input type="password" name="password" value={loginData.password} onChange={handleLoginChange} />
+                    </label>
+                    <br />
+                    <button type="submit">Se connecter</button>
                   </form>
                 )}
                 {selectedEvent.name === 'Inscription' && (
-                  <form>
-                    {/* Formulaire d'inscription */}
-                    {/* ... */}
+                  <form onSubmit={handleRegistrationSubmit}>
+                    <label>
+                      Nom d'utilisateur:
+                      <input type="text" name="username" value={registrationData.username} onChange={handleRegistrationChange} />
+                    </label>
+                    <br />
+                    <label>
+                      Mot de passe:
+                      <input type="password" name="password" value={registrationData.password} onChange={handleRegistrationChange} />
+                    </label>
+                    <br />
+                    <button type="submit">S'inscrire</button>
                   </form>
                 )}
               </div>
