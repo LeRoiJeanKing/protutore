@@ -3,13 +3,8 @@ import React, { useState } from 'react';
 import EventCard from '../components/EventCard';
 import EventDetail from '../components/EventDetail';
 import Sidebar from '../components/Sidebar';
-import Link from 'next/link'; // Import de Link
 
 const EventsPage = () => {
-  const [selectedEvent, setSelectedEvent] = useState(null);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false); // Nouveau state pour la fenêtre modale
-
-  // Déclaration de eventsData ici
   const eventsData = [
     {
       id: 1,
@@ -32,16 +27,10 @@ const EventsPage = () => {
     // Ajoute d'autres événements
   ];
 
+  const [selectedEvent, setSelectedEvent] = useState(null);
+
   const handleEventClick = (event) => {
     setSelectedEvent(event);
-  };
-
-  const openLoginModal = () => {
-    setIsLoginModalOpen(true);
-  };
-
-  const closeLoginModal = () => {
-    setIsLoginModalOpen(false);
   };
 
   return (
@@ -63,23 +52,6 @@ const EventsPage = () => {
             {selectedEvent && <EventDetail event={selectedEvent} />}
           </div>
         </div>
-
-        {/* Bouton pour ouvrir la fenêtre modale de login */}
-        <Link href="/connexion">
-          <a
-            style={{
-              marginTop: '20px',
-              padding: '8px 16px',
-              cursor: 'pointer',
-              textDecoration: 'none', // Ajoute le style pour enlever le soulignement du lien
-            }}
-          >
-            Login
-          </a>
-        </Link>
-
-        {/* Fenêtre modale de login */}
-        <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />
       </div>
     </div>
   );

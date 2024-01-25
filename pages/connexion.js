@@ -15,9 +15,8 @@ const ConnexionPage = () => {
 
   return (
     <div>
-      {/* Contenu de la page de connexion (peut être étendu selon les besoins) */}
       <h1>Page de Connexion</h1>
-      
+
       {/* Bouton pour ouvrir la fenêtre modale de login */}
       <button
         style={{
