@@ -8,7 +8,7 @@ const LoginModal = ({ isOpen, onClose }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       {/* Contenu de la fenêtre modale de login */}
-      <h2>Login</h2>
+      <h2>Logination</h2>
       {/* Ajoute les champs pour le pseudo et le mot de passe ici */}
     </Modal>
   );
