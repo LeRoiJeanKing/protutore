@@ -1,6 +1,7 @@
 // pages/connexion.js
 import React, { useState } from 'react';
 import LoginModal from '../components/LoginModal';
+import Sidebar from '../components/Sidebar';
 
 const ConnexionPage = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
