@@ -7,16 +7,12 @@ const ConnexionPage = () => {
     {
       id: 1,
       name: 'Connexion',
-      date: '2024-02-10',
-      time: '15:00',
-      description: 'Formulaire de connexion',
+
     },
     {
-      id: 2,
+    id: 2,
       name: 'Inscription',
-      date: '2024-02-15',
-      time: '18:00',
-      description: 'Formulaire d\'inscription',
+   
     },
     // Ajoute d'autres événements
   ];
@@ -76,9 +72,7 @@ const ConnexionPage = () => {
             {selectedEvent && (
               <div>
                 <h2>{selectedEvent.name}</h2>
-                <p>Date: {selectedEvent.date}</p>
-                <p>Heure: {selectedEvent.time}</p>
-                <p>Description: {selectedEvent.description}</p>
+      
                 {selectedEvent.name === 'Connexion' && (
                   <form onSubmit={handleLoginSubmit}>
                     <label>
