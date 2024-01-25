@@ -8,7 +8,7 @@ const EventsPage = () => {
   const eventsData = [
     {
       id: 1,
-      name: 'Conférence sur la Technologie',
+      name: 'Connexion',
       date: '2024-02-10',
       time: '15:00',
       description: 'Une conférence passionnante sur les dernières avancées technologiques.',
@@ -17,7 +17,7 @@ const EventsPage = () => {
     },
     {
       id: 2,
-      name: 'Tournoi de Football Universitaire',
+      name: 'Inscription',
       date: '2024-02-15',
       time: '18:00',
       description: 'Un tournoi de football entre différentes universités.',
