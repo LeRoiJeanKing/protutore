@@ -31,9 +31,9 @@ const Sidebar = () => {
           cursor: 'pointer',
           width: '100%',
         }}
-        onClick={() => handleNavigation('/')}
+        onClick={() => handleNavigation('/connexion.js')}
       >
-        Accueil
+        Connexion/Inscription
       </button>
       <button
         style={{
