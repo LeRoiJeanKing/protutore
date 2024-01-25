@@ -5,7 +5,7 @@ import EventDetail from '../components/EventDetail';
 import Sidebar from '../components/Sidebar';
 
 const EventsPage = () => {
-  const eventsData = [
+  const [eventsData, setEventsData] = useState([
     {
       id: 1,
       name: 'Conférence sur la Technologie',
@@ -25,12 +25,38 @@ const EventsPage = () => {
       location: 'Stade Universitaire',
     },
     // Ajoute d'autres événements
-  ];
+  ]);
 
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [newEvent, setNewEvent] = useState({
+    id: null,
+    name: '',
+    date: '',
+    time: '',
+    description: '',
+    location: '',
+  });
 
   const handleEventClick = (event) => {
     setSelectedEvent(event);
+  };
+
+  const handleNewEventChange = (e) => {
+    setNewEvent({ ...newEvent, [e.target.name]: e.target.value });
+  };
+
+  const handleAddEvent = () => {
+    if (newEvent.name && newEvent.date && newEvent.time && newEvent.description && newEvent.location) {
+      setEventsData([...eventsData, { ...newEvent, id: eventsData.length + 1 }]);
+      setNewEvent({
+        id: null,
+        name: '',
+        date: '',
+        time: '',
+        description: '',
+        location: '',
+      });
+    }
   };
 
   return (
@@ -51,6 +77,39 @@ const EventsPage = () => {
           <div style={{ flexGrow: 1 }}>
             {selectedEvent && <EventDetail event={selectedEvent} />}
           </div>
+        </div>
+        <div style={{ marginTop: '20px' }}>
+          <h2>Ajouter un nouvel événement</h2>
+          <form>
+            <label>
+              Nom:
+              <input type="text" name="name" value={newEvent.name} onChange={handleNewEventChange} />
+            </label>
+            <br />
+            <label>
+              Date:
+              <input type="text" name="date" value={newEvent.date} onChange={handleNewEventChange} />
+            </label>
+            <br />
+            <label>
+              Heure:
+              <input type="text" name="time" value={newEvent.time} onChange={handleNewEventChange} />
+            </label>
+            <br />
+            <label>
+              Description:
+              <input type="text" name="description" value={newEvent.description} onChange={handleNewEventChange} />
+            </label>
+            <br />
+            <label>
+              Lieu:
+              <input type="text" name="location" value={newEvent.location} onChange={handleNewEventChange} />
+            </label>
+            <br />
+            <button type="button" onClick={handleAddEvent}>
+              Ajouter
+            </button>
+          </form>
         </div>
       </div>
     </div>

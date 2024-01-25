@@ -49,7 +49,7 @@ const ConnexionPage = () => {
     <div style={{ display: 'flex' }}>
       <Sidebar />
       <div style={{ padding: '20px', flexGrow: 1 }}>
-        <h1 style={{ marginBottom: '20px' }}>Liste des Événements</h1>
+        <h1 style={{ marginBottom: '20px' }}>Connexion / Inscription</h1>
         <div style={{ display: 'flex' }}>
           <div style={{ marginRight: '20px', flexBasis: '300px' }}>
             {eventsData.map((event) => (
@@ -71,7 +71,7 @@ const ConnexionPage = () => {
           <div style={{ flexGrow: 1 }}>
             {selectedEvent && (
               <div>
-                <h2>{selectedEvent.name}</h2>
+                <h3>{selectedEvent.name}</h3>
       
                 {selectedEvent.name === 'Connexion' && (
                   <form onSubmit={handleLoginSubmit}>
