@@ -19,7 +19,22 @@ const Sidebar = () => {
         boxShadow: '2px 0 4px rgba(0, 0, 0, 0.1)',
       }}
     >
-      <h2 style={{ color: '#fff', marginBottom: '20px' }}>Menu</h2>
+      {/* Utilisation de la balise button pour "Menu" */}
+      <button
+        style={{
+          display: 'block',
+          marginBottom: '10px',
+          color: '#fff',
+          backgroundColor: '#555',
+          border: 'none',
+          padding: '8px 16px',
+          cursor: 'pointer',
+          width: '100%',
+        }}
+        onClick={() => handleNavigation('/')}
+      >
+        Menu
+      </button>
       <button
         style={{
           display: 'block',

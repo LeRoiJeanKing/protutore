@@ -8,7 +8,8 @@ const HomePage = () => {
       <Sidebar />
       <div style={{ padding: '20px', flexGrow: 1 }}>
         <h1 style={{ marginBottom: '20px' }}>Page d'Accueil</h1>
-        {/* Contenu de la page d'accueil */}
+        <img src="https://www.efrei.fr/wp-content/uploads/2024/01/Capture-decran-2024-01-16-a-14.43.19.png" alt="Efrei en sah" />
+        
       </div>
     </div>
   );
